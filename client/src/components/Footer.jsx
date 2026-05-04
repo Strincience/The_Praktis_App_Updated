@@ -9,7 +9,7 @@ export default function Footer() {
           <span className="font-heading font-bold text-lg">Praktis</span>
         </div>
         <p className="text-gray-500 text-sm text-center">
-          "Creativity is not talent. Creativity is practiced."  Praktis
+          "Creativity is just not talent. Creativity is practiced."  Praktis
         </p>
         <p className="text-gray-600 text-sm">© {new Date().getFullYear()} Praktis. All rights reserved.</p>
       </div>
