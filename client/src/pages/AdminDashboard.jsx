@@ -43,7 +43,8 @@ export default function AdminDashboard() {
   const [search, setSearch] = useState('')
 
   useEffect(() => {
-    axios.get('/api/waitlist')
+    const BASE = import.meta.env.VITE_API_URL || ''
+axios.get(`${BASE}/api/waitlist`)
       .then(res => setUsers(res.data))
       .catch(() => setUsers([]))
       .finally(() => setLoading(false))
