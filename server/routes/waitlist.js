@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const Waitlist = require('../models/Waitlist')
 
+
+
 // POST /api/waitlist — Submit a new application
 router.post('/', async (req, res) => {
   try {

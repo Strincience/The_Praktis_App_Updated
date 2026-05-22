@@ -369,7 +369,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="#about"
+                href="#WhatYoullLearn"
                 className="btn-ghost"
                 style={{ fontSize: '0.82rem', padding: '11px 22px' }}
               >
