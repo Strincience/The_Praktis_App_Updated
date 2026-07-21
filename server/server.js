@@ -3,10 +3,15 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const waitlistRoutes = require('./routes/waitlist')
+const sessionsRoutes = require('./routes/sessions')
+const rsvpRoutes = require('./routes/rsvp')
+const adminRoutes = require('./routes/admin')
 
 const app = express()
 const PORT = process.env.PORT || 5000
 
+
+app.options('*', cors()) 
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({
   origin: '*',
@@ -17,6 +22,9 @@ app.use(express.json())
 
 // ── Routes ────────────────────────────────────────────────────────────────────
 app.use('/api/waitlist', waitlistRoutes)
+app.use('/api/sessions', sessionsRoutes)
+app.use('/api/rsvp', rsvpRoutes)
+app.use('/api/admin', adminRoutes)
 
 app.get('/', (req, res) => {
   res.json({ message: 'Praktis API is running 🚀', status: 'ok' })

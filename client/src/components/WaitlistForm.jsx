@@ -71,11 +71,11 @@ export default function WaitlistForm() {
     }
     setLoading(true)
     try {
-     
-    const BASE = import.meta.env.VITE_API_URL || ''
-    await axios.post(`${BASE}/api/waitlist`, form)  
+      
+      const BASE = import.meta.env.VITE_API_URL || ''
+      await axios.post(`${BASE}/api/waitlist`, form)  
       setSubmitted(true)
-    } catch (err) {
+      } catch (err) {
       alert('Something went wrong. Please try again.')
     } finally {
       setLoading(false)

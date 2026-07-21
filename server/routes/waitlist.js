@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Waitlist = require('../models/Waitlist')
+const requireAdmin = require('../middleware/adminAuth')
 
 
 
@@ -33,7 +34,7 @@ router.post('/', async (req, res) => {
 })
 
 // GET /api/waitlist — Fetch all waitlist entries (admin)
-router.get('/', async (req, res) => {
+router.get('/', requireAdmin, async (req, res) => {
   try {
     const entries = await Waitlist.find().sort({ createdAt: -1 })
     res.json(entries)
@@ -44,7 +45,7 @@ router.get('/', async (req, res) => {
 })
 
 // GET /api/waitlist/stats — Aggregate stats for dashboard
-router.get('/stats', async (req, res) => {
+router.get('/stats', requireAdmin, async (req, res) => {
   try {
     const total = await Waitlist.countDocuments()
     const byTrack = await Waitlist.aggregate([{ $group: { _id: '$track', count: { $sum: 1 } } }])

@@ -104,9 +104,14 @@ axios.get(`${BASE}/api/waitlist`)
               <p className="text-xs text-gray-400">Waitlist Dashboard</p>
             </div>
           </div>
-          <a href="/" className="text-sm text-gray-500 hover:text-[#FF6B2C] transition-colors font-heading font-semibold">
-            ← Back to site
-          </a>
+          <div className="flex items-center gap-5">
+            <a href="/admin/sessions" className="text-sm text-gray-500 hover:text-[#FF6B2C] transition-colors font-heading font-semibold">
+              Sessions & RSVPs →
+            </a>
+            <a href="/" className="text-sm text-gray-500 hover:text-[#FF6B2C] transition-colors font-heading font-semibold">
+              ← Back to site
+            </a>
+          </div>
         </div>
       </div>
 
