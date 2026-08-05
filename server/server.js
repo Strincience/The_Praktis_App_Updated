@@ -6,6 +6,8 @@ const waitlistRoutes = require('./routes/waitlist')
 const sessionsRoutes = require('./routes/sessions')
 const rsvpRoutes = require('./routes/rsvp')
 const adminRoutes = require('./routes/admin')
+const leaderboardRoutes = require('./routes/leaderboard')
+const leaderboardAdminRoutes = require('./routes/leaderboardAdmin')
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -25,6 +27,9 @@ app.use('/api/waitlist', waitlistRoutes)
 app.use('/api/sessions', sessionsRoutes)
 app.use('/api/rsvp', rsvpRoutes)
 app.use('/api/admin', adminRoutes)
+app.use('/api/leaderboard', leaderboardRoutes)
+// Obscure path + shared admin password (same as /api/admin) — still keep it out of any nav/sitemap.
+app.use('/api/leaderboard-mgmt-7k2x', leaderboardAdminRoutes)
 
 app.get('/', (req, res) => {
   res.json({ message: 'Praktis API is running 🚀', status: 'ok' })

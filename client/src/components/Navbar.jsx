@@ -68,14 +68,23 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* CTA — fires the modal */}
-        <button
-          onClick={openModal}
-          className="btn-orange font-heading font-bold text-white"
-          style={{ fontSize: '0.8rem', padding: '9px 20px' }}
-        >
-          Join Now
-        </button>
+        {/* CTAs */}
+        <div className="flex items-center gap-3">
+          <a
+            href="/leaderboard"
+            className="btn-gradient font-heading font-bold text-white"
+            style={{ fontSize: '0.8rem', padding: '9px 18px' }}
+          >
+            🔥 View Leaderboard
+          </a>
+          <button
+            onClick={openModal}
+            className="btn-orange font-heading font-bold text-white"
+            style={{ fontSize: '0.8rem', padding: '9px 20px' }}
+          >
+            Join Now
+          </button>
+        </div>
       </div>
     </motion.nav>
   )

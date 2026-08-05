@@ -68,6 +68,27 @@
   }
   .btn-orange:active { transform: translateY(0); }
 
+  /* Orange-to-pink gradient button — Hero Leaderboard CTA */
+  .btn-gradient {
+    background: linear-gradient(90deg, #FF6B2C 0%, #FF3E7A 100%);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    box-shadow: 0 4px 18px rgba(255, 62, 122, 0.3);
+  }
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 62, 122, 0.38);
+  }
+  .btn-gradient:active { transform: translateY(0); }
+
   /* Ghost button */
   .btn-ghost {
     background: transparent;
